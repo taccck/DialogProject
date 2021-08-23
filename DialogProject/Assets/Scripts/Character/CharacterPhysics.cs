@@ -1,16 +1,20 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterPhysics : MonoBehaviour
 {
+    [NonSerialized] public bool ONGround;
+    [NonSerialized] public bool IgnorGravity;
+
     [SerializeField] private LayerMask groundLayer;
     [Header("Characters dimensions")]
     [SerializeField] private Vector2 charactersCenter;
     [SerializeField] private Vector2 charactersSize;
     
-    private const float MAXDistanceToGround = .1f;
-    
-    private bool _onGround;
+    private const float MAXDistanceToGround = .05f;
+    private const float MINGravityScale = .1f;
+
     private Rigidbody2D _body;
     
     private void FixedUpdate()
@@ -22,20 +26,25 @@ public class CharacterPhysics : MonoBehaviour
     
     private void OnGround()
     {
-        _onGround = Physics2D.BoxCast(charactersCenter, charactersSize, 0, Vector2.down, MAXDistanceToGround,
-            groundLayer);
+        Vector2 position = transform.position;
+        ONGround = Physics2D.BoxCast(charactersCenter + position, charactersSize, 0, Vector2.down,
+            MAXDistanceToGround, groundLayer);
+        
+        print(ONGround);
     }
 
     private void Gravity()
     {
-        if (_onGround)
+        if (IgnorGravity) return;
+        
+        if (ONGround)
         {
-            _body.velocity = new Vector2(_body.velocity.x, .1f);
+            _body.velocity = _body.velocity.SetX(MINGravityScale);
             return;
         }
 
-        float currFallSpeed = _body.velocity.y + (Physics2D.gravity.y * Time.deltaTime);
-        _body.velocity = new Vector2(_body.velocity.x, currFallSpeed);
+        float currFallSpeed = _body.velocity.y + Physics2D.gravity.y * Time.deltaTime;
+        _body.velocity = _body.velocity.SetY(currFallSpeed);
     }
 
     private void Awake()
