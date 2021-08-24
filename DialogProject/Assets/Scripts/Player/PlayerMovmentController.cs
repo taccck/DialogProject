@@ -19,54 +19,48 @@ public class PlayerMovmentController : MonoBehaviour
     private PlayerInput _controls;
     private CharacterPhysics _characterPhysics;
     private int _walkDir;
-    private bool _jumpInput;
     private float _currJumpTime;
 
     private void FixedUpdate()
     {
         GetComponentInChildren<Animator>().SetBool("Walking", Walking);
+        GetComponentInChildren<Animator>().SetBool("Jumping", Jumping);
 
         Walk();
         Jump();
     }
 
-    private void OnMove(InputValue value) => _walkDir = (int) value.Get<float>();
+    private void OnMove(InputValue value) => _walkDir = (int)value.Get<float>();
 
     private void OnJump(InputValue value)
     {
-        print(_characterPhysics.ONGround);
         if (value.isPressed && _characterPhysics.ONGround)
         {
-            print("jklfdjklfgds");
+            Jumping = true;
+            return;
         }
 
+        Jumping = false;
     } 
 
     public void Walk()
     {
         Walking = _walkDir != 0;
-        _body.velocity = _body.velocity.SetX(_walkDir * walkSpeed); //todo fix this
+        _body.velocity = new Vector2(_walkDir * walkSpeed, _body.velocity.y);
         Flip();
     }
 
     private void Flip()
     {
         if (_walkDir == 0) return;
-        transform.localScale = transform.localScale.SetX(_walkDir);
+        transform.localScale = new Vector2(_walkDir, 1);
     }
     
     private void Jump()
     {
         _characterPhysics.IgnorGravity = false;
-        if (!Jumping)
-        {
-            _currJumpTime = 0;
-            Jumping = false;
-            return;
-        }
-        
         _currJumpTime += Time.deltaTime;
-        if (_currJumpTime >= maxJumpTime)
+        if (!Jumping || _currJumpTime >= maxJumpTime)
         {
             _currJumpTime = 0;
             Jumping = false;
@@ -74,7 +68,7 @@ public class PlayerMovmentController : MonoBehaviour
         }
 
         _characterPhysics.IgnorGravity = true;
-        _body.velocity = _body.velocity.SetY(_jumpSpeed);
+        _body.velocity = new Vector2(_body.velocity.x, _jumpSpeed);
     }
 
     private void Awake()

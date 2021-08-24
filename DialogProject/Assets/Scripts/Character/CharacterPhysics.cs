@@ -12,15 +12,14 @@ public class CharacterPhysics : MonoBehaviour
     [SerializeField] private Vector2 charactersCenter;
     [SerializeField] private Vector2 charactersSize;
     
-    private const float MAXDistanceToGround = .05f;
-    private const float MINGravityScale = .1f;
+    private const float MAXDistanceToGround = .1f;
+    private const float MINGravityScale = -.1f;
 
     private Rigidbody2D _body;
     
     private void FixedUpdate()
     {
         OnGround();
-
         Gravity();
     }
     
@@ -29,8 +28,6 @@ public class CharacterPhysics : MonoBehaviour
         Vector2 position = transform.position;
         ONGround = Physics2D.BoxCast(charactersCenter + position, charactersSize, 0, Vector2.down,
             MAXDistanceToGround, groundLayer);
-        
-        print(ONGround);
     }
 
     private void Gravity()
@@ -39,12 +36,12 @@ public class CharacterPhysics : MonoBehaviour
         
         if (ONGround)
         {
-            _body.velocity = _body.velocity.SetX(MINGravityScale);
+            _body.velocity = new Vector2(_body.velocity.x, MINGravityScale); 
             return;
         }
 
         float currFallSpeed = _body.velocity.y + Physics2D.gravity.y * Time.deltaTime;
-        _body.velocity = _body.velocity.SetY(currFallSpeed);
+        _body.velocity = new Vector2(_body.velocity.x, currFallSpeed);
     }
 
     private void Awake()
