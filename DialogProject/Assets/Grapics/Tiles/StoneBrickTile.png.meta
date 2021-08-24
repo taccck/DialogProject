@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: 7f635b4ef8cdb3347b3ee7ee8541aa7d
+guid: 238ceaf12961dc1439229588f7c7875d
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -2256948484998397059
-    second: NPC1_0
-  - first:
-      213: 2938968616035752627
-    second: NPC1_1
-  - first:
-      213: -5265899166097481580
-    second: Gertrude_0
-  - first:
-      213: 9058456766947677137
-    second: Gertrude_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -101,49 +89,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Gertrude_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 490ebbdbb94cbe6b0800000000000000
-      internalID: -5265899166097481580
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gertrude_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d3562f8f6a16bd70800000000000000
-      internalID: 9058456766947677137
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

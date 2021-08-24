@@ -11,9 +11,9 @@ public class PlayerMovmentController : MonoBehaviour
     [SerializeField, Tooltip("Meters / second"), Header("Walking")]
     private float walkSpeed = 5f;
     [SerializeField, Tooltip("Seconds"), Header("Jumping")]
-    private float maxJumpTime = 5f;
+    private float maxJumpTime = .5f;
     [SerializeField, Tooltip("Meters / second")]
-    private float _jumpSpeed;
+    private float _jumpSpeed = 7f;
 
     private Rigidbody2D _body;
     private PlayerInput _controls;
