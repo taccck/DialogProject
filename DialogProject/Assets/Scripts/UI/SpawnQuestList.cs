@@ -20,6 +20,7 @@ public class SpawnQuestList : MonoBehaviour
                 selected = Instantiate(questUIPrefab, transform).GetComponent<QuestUI>();
                 selected.SetUIFirst(quest, this);
                 first = false;
+                continue;
             }
 
             Instantiate(questUIPrefab, transform).GetComponent<QuestUI>().SetUI(quest, this);

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Quest", menuName = "Quest", order = 1)]
@@ -12,7 +11,7 @@ public class Quest : ScriptableObject
     
     /*private*/ public int state;
 
-    public void IncrementQuestState()
+    public void IncrementState()
     {
         if (!Accepted) return;
         
@@ -24,7 +23,7 @@ public class Quest : ScriptableObject
         }
     }
 
-    public void ReduceQuestState()
+    public void ReduceState()
     {
         if (!Accepted) return;
         
@@ -35,6 +34,7 @@ public class Quest : ScriptableObject
 
     public string GetCheckpoint()
     {
+        if (Completed) return "Completed: " + name;
         return checkpoints[state];
     }
 

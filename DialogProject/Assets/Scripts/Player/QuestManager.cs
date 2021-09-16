@@ -6,9 +6,10 @@ public class QuestManager : MonoBehaviour
     public Quest startQuest;
     
     [SerializeField] private GameObject questCanvas;
-    
+
+    private MessageUI messageUI;
     private SpawnQuestList qList;
-    public List<Quest> quests = new List<Quest>(); //todo add completed quest list
+    private Stack<Quest> quests = new Stack<Quest>(); 
     private bool menuOpen;
 
     private void OnQuest()
@@ -26,6 +27,12 @@ public class QuestManager : MonoBehaviour
             qList.RemoveQuests();
             Time.timeScale = 1;
         }
+    }
+
+    public void Add(Quest q)
+    {
+        messageUI.SetMessage(q.GetCheckpoint());
+        quests.Push(q);
     }
 
     public QuestInfo[] AllUncompletedQuests()
@@ -69,6 +76,7 @@ public class QuestManager : MonoBehaviour
     private void Awake()
     {
         qList = questCanvas.GetComponentInChildren<SpawnQuestList>();
-        quests.Add(startQuest);
+        messageUI = GetComponentInChildren<MessageUI>();
+        Add(startQuest);
     }
 }
