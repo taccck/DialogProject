@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterPhysics : MonoBehaviour
 {
     [NonSerialized] public bool ONGround;
-    [NonSerialized] public bool IgnorGravity;
+    [NonSerialized] public bool IgnoreGravity;
 
     [SerializeField] private LayerMask groundLayer;
     [Header("Characters dimensions")]
@@ -15,7 +15,7 @@ public class CharacterPhysics : MonoBehaviour
     private const float MAXDistanceToGround = .1f;
     private const float MINGravityScale = -.1f;
 
-    private Rigidbody2D _body;
+    private Rigidbody2D body;
     
     private void FixedUpdate()
     {
@@ -32,20 +32,20 @@ public class CharacterPhysics : MonoBehaviour
 
     private void Gravity()
     {
-        if (IgnorGravity) return;
+        if (IgnoreGravity) return;
         
         if (ONGround)
         {
-            _body.velocity = new Vector2(_body.velocity.x, MINGravityScale); 
+            body.velocity = new Vector2(body.velocity.x, MINGravityScale); 
             return;
         }
 
-        float currFallSpeed = _body.velocity.y + Physics2D.gravity.y * Time.deltaTime;
-        _body.velocity = new Vector2(_body.velocity.x, currFallSpeed);
+        float currFallSpeed = body.velocity.y + Physics2D.gravity.y * Time.deltaTime;
+        body.velocity = new Vector2(body.velocity.x, currFallSpeed);
     }
 
     private void Awake()
     {
-        _body = GetComponent<Rigidbody2D>();
+        body = GetComponent<Rigidbody2D>();
     }
 }

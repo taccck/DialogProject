@@ -14,7 +14,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "General",
+                    "name": "Interact",
                     "type": "Button",
                     "id": "a27bdbe3-067c-44cf-aa5f-9303f7b2812c",
                     "expectedControlType": "Button",
@@ -28,6 +28,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press(behavior=2)"
+                },
+                {
+                    "name": "Scroll",
+                    "type": "Value",
+                    "id": "ba4e2051-75f1-406a-a7cf-59b77e5e133d",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Quest",
+                    "type": "Button",
+                    "id": "5abc5143-0aab-4b8b-9330-d29cde51022b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -38,7 +54,7 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "General",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -49,18 +65,29 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "General",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "a037ba06-9f1a-4996-9cdc-b8fd8ccfaf51",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Joystick and Gamepad",
-                    "action": "General",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3abcd4cc-3202-474e-ac68-200c9750f49d",
+                    "path": "<Keyboard>/e",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -206,6 +233,50 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "ScrollKey",
+                    "id": "1a1b13c6-bc9b-4b66-98be-bbb86ad3c9e6",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scroll",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "4c6ec87e-7b80-47a9-a75b-d53caac84095",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "5e1f049a-2f31-4560-8a66-0cc8374a74b8",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "d6202b3d-80a9-42e2-8fbc-4728e5ea1722",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Quest",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

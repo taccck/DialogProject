@@ -27,7 +27,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""General"",
+                    ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""a27bdbe3-067c-44cf-aa5f-9303f7b2812c"",
                     ""expectedControlType"": ""Button"",
@@ -41,6 +41,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""Scroll"",
+                    ""type"": ""Value"",
+                    ""id"": ""ba4e2051-75f1-406a-a7cf-59b77e5e133d"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""Quest"",
+                    ""type"": ""Button"",
+                    ""id"": ""5abc5143-0aab-4b8b-9330-d29cde51022b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -51,7 +67,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""General"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -62,18 +78,29 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""General"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""a037ba06-9f1a-4996-9cdc-b8fd8ccfaf51"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Joystick and Gamepad"",
-                    ""action"": ""General"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3abcd4cc-3202-474e-ac68-200c9750f49d"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -219,6 +246,50 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""ScrollKey"",
+                    ""id"": ""1a1b13c6-bc9b-4b66-98be-bbb86ad3c9e6"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""4c6ec87e-7b80-47a9-a75b-d53caac84095"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""5e1f049a-2f31-4560-8a66-0cc8374a74b8"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d6202b3d-80a9-42e2-8fbc-4728e5ea1722"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Quest"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -256,8 +327,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         // OnFoot
         m_OnFoot = asset.FindActionMap("OnFoot", throwIfNotFound: true);
         m_OnFoot_Move = m_OnFoot.FindAction("Move", throwIfNotFound: true);
-        m_OnFoot_General = m_OnFoot.FindAction("General", throwIfNotFound: true);
+        m_OnFoot_Interact = m_OnFoot.FindAction("Interact", throwIfNotFound: true);
         m_OnFoot_Jump = m_OnFoot.FindAction("Jump", throwIfNotFound: true);
+        m_OnFoot_Scroll = m_OnFoot.FindAction("Scroll", throwIfNotFound: true);
+        m_OnFoot_Quest = m_OnFoot.FindAction("Quest", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -308,15 +381,19 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_OnFoot;
     private IOnFootActions m_OnFootActionsCallbackInterface;
     private readonly InputAction m_OnFoot_Move;
-    private readonly InputAction m_OnFoot_General;
+    private readonly InputAction m_OnFoot_Interact;
     private readonly InputAction m_OnFoot_Jump;
+    private readonly InputAction m_OnFoot_Scroll;
+    private readonly InputAction m_OnFoot_Quest;
     public struct OnFootActions
     {
         private @PlayerControls m_Wrapper;
         public OnFootActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_OnFoot_Move;
-        public InputAction @General => m_Wrapper.m_OnFoot_General;
+        public InputAction @Interact => m_Wrapper.m_OnFoot_Interact;
         public InputAction @Jump => m_Wrapper.m_OnFoot_Jump;
+        public InputAction @Scroll => m_Wrapper.m_OnFoot_Scroll;
+        public InputAction @Quest => m_Wrapper.m_OnFoot_Quest;
         public InputActionMap Get() { return m_Wrapper.m_OnFoot; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -329,12 +406,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Move.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnMove;
-                @General.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnGeneral;
-                @General.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnGeneral;
-                @General.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnGeneral;
+                @Interact.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnInteract;
                 @Jump.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnJump;
+                @Scroll.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnScroll;
+                @Scroll.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnScroll;
+                @Scroll.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnScroll;
+                @Quest.started -= m_Wrapper.m_OnFootActionsCallbackInterface.OnQuest;
+                @Quest.performed -= m_Wrapper.m_OnFootActionsCallbackInterface.OnQuest;
+                @Quest.canceled -= m_Wrapper.m_OnFootActionsCallbackInterface.OnQuest;
             }
             m_Wrapper.m_OnFootActionsCallbackInterface = instance;
             if (instance != null)
@@ -342,12 +425,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
-                @General.started += instance.OnGeneral;
-                @General.performed += instance.OnGeneral;
-                @General.canceled += instance.OnGeneral;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @Scroll.started += instance.OnScroll;
+                @Scroll.performed += instance.OnScroll;
+                @Scroll.canceled += instance.OnScroll;
+                @Quest.started += instance.OnQuest;
+                @Quest.performed += instance.OnQuest;
+                @Quest.canceled += instance.OnQuest;
             }
         }
     }
@@ -373,7 +462,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     public interface IOnFootActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnGeneral(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnScroll(InputAction.CallbackContext context);
+        void OnQuest(InputAction.CallbackContext context);
     }
 }
