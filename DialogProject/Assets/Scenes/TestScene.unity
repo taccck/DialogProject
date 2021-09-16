@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 43741289}
   - component: {fileID: 43741288}
   - component: {fileID: 43741287}
+  - component: {fileID: 43741290}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: Untagged
@@ -323,6 +324,38 @@ Transform:
   m_Father: {fileID: 1562842720}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &43741290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43741286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &56843910
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +638,7 @@ GameObject:
   - component: {fileID: 233503650}
   - component: {fileID: 233503652}
   m_Layer: 0
-  m_Name: NightSkyBackground
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -655,9 +688,9 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 21.6, y: 21.6}
-  m_AdaptiveModeThreshold: 0.5
+  m_DrawMode: 2
+  m_Size: {x: 62.847137, y: 21.6}
+  m_AdaptiveModeThreshold: 0
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
@@ -669,12 +702,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233503649}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.19, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.0464, y: 7.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &233503652
 MonoBehaviour:
@@ -685,12 +718,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 233503649}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2876a29f8a6bd034a8535dac613bad8a, type: 3}
+  m_Script: {fileID: 11500000, guid: e89e1e8c740cffb448d5947bb038de78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toFollow: {fileID: 1325315084}
-  smoothing: 0
-  fixedX: 1
+  effectMulti: 0.1
+  cameraTransform: {fileID: 43741289}
 --- !u!1 &395126145
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,6 +1001,7 @@ GameObject:
   - component: {fileID: 779828654}
   - component: {fileID: 779828653}
   - component: {fileID: 779828655}
+  - component: {fileID: 779828656}
   m_Layer: 0
   m_Name: 'Moon '
   m_TagString: Untagged
@@ -1039,7 +1072,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 19.684}
 --- !u!114 &779828655
 MonoBehaviour:
@@ -1082,6 +1115,20 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &779828656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779828652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e89e1e8c740cffb448d5947bb038de78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectMulti: 0.6
+  cameraTransform: {fileID: 43741289}
 --- !u!1 &887709061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,7 +1728,7 @@ GameObject:
   - component: {fileID: 1539749423}
   - component: {fileID: 1539749422}
   m_Layer: 0
-  m_Name: Global Light 2D
+  m_Name: Global Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2121,7 +2168,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1749037950
 GameObject:
