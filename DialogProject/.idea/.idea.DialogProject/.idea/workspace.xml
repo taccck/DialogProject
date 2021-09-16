@@ -6,16 +6,32 @@
   <component name="ChangeListManager">
     <list default="true" id="ed18259f-edcf-48bd-b935-107c7392741a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DialogProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DialogProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphs/ConversationGertrude.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphs/ConversationGertrude.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphs/Conversation.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphs/Conversation.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Graphs/ConversationSigbert.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphs/ConversationSigbert.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ludiq/Bolt.Flow/Generated/UnitOptions.db" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ludiq/Bolt.Flow/Generated/UnitOptions.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_01.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/NPCQuestManger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/NPCQuestManger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphs/Test.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphs/Test.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Grapics/2D Renderer Data.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Grapics/2D Renderer Data.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Grapics/Renderers/2D Renderer Data.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Grapics/Renderers/2D Renderer Data.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Grapics/Renderers/UniversalRenderPipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Grapics/Renderers/UniversalRenderPipelineAsset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Grapics/Renderers/UniversalRenderPipelineAsset.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Grapics/Renderers/UniversalRenderPipelineAsset.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Grapics/Renderers/UniversalRenderPipelineAsset_Renderer.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Grapics/Renderers/UniversalRenderPipelineAsset_Renderer.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Grapics/UniversalRenderPipelineAsset.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Grapics/UniversalRenderPipelineAsset.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Grapics/UniversalRenderPipelineAsset_Renderer.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Grapics/UniversalRenderPipelineAsset_Renderer.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inputs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inputs/PlayerControls.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Inputs/PlayerControls.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogOption.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DialogOption.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/QuestManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/QuestManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Quest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Quest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SpawnQuestList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SpawnQuestList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +124,7 @@
       <workItem from="1631540294687" duration="12208000" />
       <workItem from="1631635973964" duration="2070000" />
       <workItem from="1631689928793" duration="15438000" />
-      <workItem from="1631784646804" duration="9399000" />
+      <workItem from="1631784646804" duration="10987000" />
     </task>
     <servers />
   </component>

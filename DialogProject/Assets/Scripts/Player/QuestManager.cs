@@ -73,10 +73,11 @@ public class QuestManager : MonoBehaviour
         public string Checkpoint;
     }
 
-    private void Awake()
+    private void Start()
     {
         qList = questCanvas.GetComponentInChildren<SpawnQuestList>();
         messageUI = GetComponentInChildren<MessageUI>();
+        startQuest.Reset();
         Add(startQuest);
     }
 }

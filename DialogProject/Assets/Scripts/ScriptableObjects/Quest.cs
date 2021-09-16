@@ -42,5 +42,11 @@ public class Quest : ScriptableObject
     {
         return state;
     }
+
+    public void Reset()
+    {
+        state = 0;
+        Completed = false;
+    }
 }
 
