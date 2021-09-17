@@ -4,6 +4,7 @@ using UnityEngine;
 public class SpawnQuestList : MonoBehaviour
 {
     [SerializeField] private GameObject questUIPrefab;
+    [SerializeField] private Transform questListParent;
     [SerializeField] private QuestManager questManager;
     [SerializeField] private TextMeshProUGUI qName;
     [SerializeField] private TextMeshProUGUI qCheckpoint;
@@ -17,13 +18,13 @@ public class SpawnQuestList : MonoBehaviour
         {
             if (first)
             {
-                selected = Instantiate(questUIPrefab, transform).GetComponent<QuestUI>();
+                selected = Instantiate(questUIPrefab, questListParent).GetComponent<QuestUI>();
                 selected.SetUIFirst(quest, this);
                 first = false;
                 continue;
             }
 
-            Instantiate(questUIPrefab, transform).GetComponent<QuestUI>().SetUI(quest, this);
+            Instantiate(questUIPrefab, questListParent).GetComponent<QuestUI>().SetUI(quest, this);
         }
 
         if (first)
@@ -49,9 +50,9 @@ public class SpawnQuestList : MonoBehaviour
 
     public void RemoveQuests()
     {
-        foreach (Transform t in GetComponentsInChildren<Transform>())
+        foreach (Transform t in questListParent.GetComponentsInChildren<Transform>())
         {
-            if (t == transform) continue;
+            if (t == questListParent) continue;
             Destroy(t.gameObject);
         }
     }

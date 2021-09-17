@@ -492,7 +492,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5927840420698249189}
   - component: {fileID: 5927840420698249191}
-  - component: {fileID: 5927840420698249190}
   m_Layer: 5
   m_Name: QuestList
   m_TagString: Untagged
@@ -545,22 +544,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &5927840420698249190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5927840420698249188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4438dde95daa84b48bc253088efdde6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questUIPrefab: {fileID: 1197203543717268705, guid: 152f860d6bc9f1041aaff09a91249406, type: 3}
-  questManager: {fileID: 5927840422279597722}
-  qName: {fileID: 5927840420670097190}
-  qCheckpoint: {fileID: 5927840422131042318}
 --- !u!1 &5927840420762893392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,6 +1071,7 @@ GameObject:
   - component: {fileID: 5927840421314258447}
   - component: {fileID: 5927840421314258446}
   - component: {fileID: 5927840421314258445}
+  - component: {fileID: 111600803222390888}
   m_Layer: 5
   m_Name: QuestCanvas
   m_TagString: Untagged
@@ -1176,6 +1160,23 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &111600803222390888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5927840421314258443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4438dde95daa84b48bc253088efdde6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questUIPrefab: {fileID: 1197203543717268705, guid: 152f860d6bc9f1041aaff09a91249406, type: 3}
+  questListParent: {fileID: 5927840420698249189}
+  questManager: {fileID: 5927840422279597722}
+  qName: {fileID: 5927840420670097190}
+  qCheckpoint: {fileID: 5927840422131042318}
 --- !u!1 &5927840421957991943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,7 +1575,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startQuest: {fileID: 11400000, guid: 80793ed3462ef044e8856e0691efa100, type: 2}
-  questCanvas: {fileID: 5927840421314258443}
+  questList: {fileID: 111600803222390888}
+  messageUI: {fileID: 5927840421249375208}
 --- !u!114 &5927840422279597725
 MonoBehaviour:
   m_ObjectHideFlags: 0

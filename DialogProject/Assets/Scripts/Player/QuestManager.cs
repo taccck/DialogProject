@@ -3,28 +3,26 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
-    public Quest startQuest;
+    [SerializeField] private Quest startQuest;
+    [SerializeField] private SpawnQuestList questList;
+    [SerializeField] private MessageUI messageUI;
     
-    [SerializeField] private GameObject questCanvas;
-
-    private MessageUI messageUI;
-    private SpawnQuestList qList;
     private Stack<Quest> quests = new Stack<Quest>(); 
     private bool menuOpen;
 
     private void OnQuest()
     {
         menuOpen = !menuOpen;
-        questCanvas.SetActive(menuOpen);
+        questList.gameObject.SetActive(menuOpen);
 
         if (menuOpen)
         {
-            qList.SpawnQuests();
+            questList.SpawnQuests();
             Time.timeScale = 0;
         }
         else
         {
-            qList.RemoveQuests();
+            questList.RemoveQuests();
             Time.timeScale = 1;
         }
     }
@@ -75,8 +73,6 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
-        qList = questCanvas.GetComponentInChildren<SpawnQuestList>();
-        messageUI = GetComponentInChildren<MessageUI>();
         startQuest.Reset();
         Add(startQuest);
     }
